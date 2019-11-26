@@ -1,27 +1,20 @@
 $(document).ready(function () {
-	var searchInput = $('.search_input');
-	var searchButton = $('.search_button');
-	$(searchInput).on('focus', function () {
-		$(this).animate({
-			border : '3px solid red',
-		});
-	});
-
 	$('#search_form').submit(function (e) {
 		e.preventDefault();
 	});
 
-	console.log('fainl working');
+	// get search from the input
+	var q = $('#query').val();
 
 	$('#search_form').submit(function () {
-		alert('Submitted');
+		// alert('Submitted');
 		// clear result
 		$('#results').html('');
 		$('#buttons').html('');
 
 		// get search from the input
 		var q = $('#query').val();
-		console.log(q);
+		// console.log(q);
 
 		// run GET request on API
 		$.get(
